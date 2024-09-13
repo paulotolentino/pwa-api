@@ -92,7 +92,3 @@ The API provides the following routes:
   }
   ```
 - **Response**: Sends the notification to all saved subscriptions.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
