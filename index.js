@@ -84,11 +84,18 @@ app.post('/push/broadcast', (req, res) => {
   try {
 
 
-    const { title, body } = req.body;
+    const { title, body, icon, badge, image, vibrate, actions, timestamp, dir } = req.body;
     const notificationPayload = {
       notification: {
         title,
         body,
+        icon,
+        badge,
+        image,
+        vibrate,
+        actions,
+        timestamp: timestamp || Date.now(),
+        dir: dir || 'ltr'
       }
     };
 
