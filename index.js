@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 app.get('/push/get-vapid-public-key', (req, res) => {
   try {
     console.log("Public Vapid Key:", PUBLIC_VAPID_KEY);
-    res.send(PUBLIC_VAPID_KEY);
+    res.status(200).send(PUBLIC_VAPID_KEY);
   } catch (error) {
     console.log("Error on /get-vapid-public-key:", error);
     res.status(500).send();
