@@ -24,7 +24,13 @@ app.use((req, res, next) => {
 });
 
 app.get('/push/get-vapid-public-key', (req, res) => {
-  res.send(PUBLIC_VAPID_KEY);
+  try {
+    console.log("Public Vapid Key:", PUBLIC_VAPID_KEY);
+    res.send(PUBLIC_VAPID_KEY);
+  } catch (error) {
+    console.log("Error on /get-vapid-public-key:", error);
+    res.status(500).send();
+  }
 });
 
 app.post('/push/subscribe', (req, res) => {
@@ -108,7 +114,7 @@ app.post('/push/broadcast', (req, res) => {
       });
   } catch (error) {
     console.log("Error on /broadcast:", error);
-    res.status
+    res.status(500).send();
   }
 });
 
