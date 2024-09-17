@@ -29,7 +29,7 @@ app.get('/push/get-vapid-public-key', (req, res) => {
     res.status(200).send(PUBLIC_VAPID_KEY);
   } catch (error) {
     console.log("Error on /get-vapid-public-key:", error);
-    res.status(500).send();
+    res.status(500).send(error);
   }
 });
 
@@ -46,7 +46,7 @@ app.post('/push/subscribe', (req, res) => {
     res.status(201).send();
   } catch (error) {
     console.log("Error on /subscribe:", error);
-    res.status(500).send();
+    res.status(500).send(error);
   }
 });
 
@@ -77,7 +77,7 @@ app.post('/push/send-notification-to-list', (req, res) => {
       });
   } catch (error) {
     console.log("Error on /send-notification-to-list:", error);
-    res.status(500).send();
+    res.status(500).send(error);
   }
 });
 
@@ -114,7 +114,7 @@ app.post('/push/broadcast', (req, res) => {
       });
   } catch (error) {
     console.log("Error on /broadcast:", error);
-    res.status(500).send();
+    res.status(500).send(error);
   }
 });
 
